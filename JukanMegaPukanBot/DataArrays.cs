@@ -8,7 +8,9 @@ namespace JukanMegaPukanBot
     {
         //public List<string> BotCommands = new List<string>();
         private readonly string[] BotCommands = new string[20];
+#pragma warning disable CS0649 // Полю "DataArrays.n" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию 0.
         int n;
+#pragma warning restore CS0649 // Полю "DataArrays.n" нигде не присваивается значение, поэтому оно всегда будет иметь значение по умолчанию 0.
        
         public DataArrays()
         {

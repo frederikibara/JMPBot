@@ -1,21 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace JukanMegaPukanBot
 {
     class User
     {
+#pragma warning disable CS0169 // Поле "User.Id" никогда не используется.
         private long Id;
-        private string FirstName;
+#pragma warning restore CS0169 // Поле "User.Id" никогда не используется.
+        public string FirstName;
         private bool InGame;
 
-        private int Score;
-        private int LoserCount;
-        private int WinCount;
-        private string Status;
+        public int Score;
+
+#pragma warning disable CS0169 // Поле "User.LoserCount" никогда не используется.
+        public int Lose;
+#pragma warning restore CS0169 // Поле "User.LoserCount" никогда не используется.
+#pragma warning disable CS0169 // Поле "User.WinCount" никогда не используется.
+        public int Win;
+#pragma warning restore CS0169 // Поле "User.WinCount" никогда не используется.
+        public string Status;
 
 
       /*  public User(long Id, bool InGame, string FirstName, int Score, int LoserCount, int WinCount, string Status)
@@ -36,9 +40,21 @@ namespace JukanMegaPukanBot
             this.Status = Status;
         }
 
-        public User(string FirstName)
+        public User(string FirstName, int Win, int Lose, string Status, int Score)
         {          
-            this.FirstName = FirstName;            
+            this.FirstName = FirstName;
+            this.Score = Score;
+            this.Win = Win;
+            this.Lose = Lose;
+            this.Status = Status;
+            this.Score = Score;
+        }
+
+        public User(string FirstName, int Win)
+        {
+            this.FirstName = FirstName;
+            this.Win = Win;
+            
         }
 
 
